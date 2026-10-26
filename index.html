@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower - Norma Lilia Damián Salas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?
+                                                family=Dancing+Script:wght@400..700&display=swap&
+                                                family=Cinzel:wght@500;600;700&
+                                                family=Great+Vibes&
+                                                family=Montserrat:wght@300;400;500;600;700&
+                                                family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center py-0 md:py-8 px-0 sm:px-4">
+
+    <!-- REPRODUCTOR DE MÚSICA DE FONDO -->
+    <audio id="bgAudio" loop preload="none">
+        <source src="resources/te-esperaba.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- CONTENEDOR PRINCIPAL TIPO CANVAS FLUIDO -->
+    <div class="invitation-card w-full max-w-md min-h-screen md:min-h-0 md:rounded-3xl overflow-hidden relative border-0 md:border-4 border-sage-300/40">
+
+        <!-- DECORACIÓN DE FONDO: NUBES Y ESTRELLAS FLOTANTES -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+            <!-- Nubes Acuarela Superior e Inferior -->
+            <svg class="absolute top-2 -left-10 w-44 h-24 fill-white/80 float-gentle" viewBox="0 0 100 60">
+                <path d="M10,40 Q20,15 45,25 Q60,5 80,18 Q98,15 92,42 Q98,52 80,52 L20,52 Q5,52 10,40 Z" />
+            </svg>
+            <svg class="absolute top-12 -right-12 w-48 h-28 fill-white/75 float-delay-1" viewBox="0 0 100 60">
+                <path d="M10,40 Q20,15 45,25 Q60,5 80,18 Q98,15 92,42 Q98,52 80,52 L20,52 Q5,52 10,40 Z" />
+            </svg>
+
+            <svg class="absolute top-[38%] -left-12 w-48 h-28 fill-white/50 float-delay-2" viewBox="0 0 100 60">
+                <path d="M10,40 Q20,15 45,25 Q60,5 80,18 Q98,15 92,42 Q98,52 80,52 L20,52 Q5,52 10,40 Z" />
+            </svg>
+            <svg class="absolute top-[68%] -right-10 w-44 h-28 fill-white/50 float-gentle" viewBox="0 0 100 60">
+                <path d="M10,40 Q20,15 45,25 Q60,5 80,18 Q98,15 92,42 Q98,52 80,52 L20,52 Q5,52 10,40 Z" />
+            </svg>
+
+            <!-- Estrellitas Doradas y Verdes Dispersas -->
+            <svg class="absolute top-6 left-8 w-4 h-4 fill-gold-400 twinkle-star" viewBox="0 0 24 24"><path d="M12 0L15.09 8.26L24 9.27L17.36 15.14L19.38 24L12 19.34L4.62 24L6.64 15.14L0 9.27L8.91 8.26L12 0Z"/></svg>
+            <svg class="absolute top-10 right-8 w-5 h-5 fill-gold-400 twinkle-star" style="animation-delay: 0.7s;" viewBox="0 0 24 24"><path d="M12 0L15.09 8.26L24 9.27L17.36 15.14L19.38 24L12 19.34L4.62 24L6.64 15.14L0 9.27L8.91 8.26L12 0Z"/></svg>
+            <svg class="absolute top-[30%] right-5 w-4 h-4 fill-sage-500 twinkle-star" style="animation-delay: 1.2s;" viewBox="0 0 24 24"><path d="M12 0L15.09 8.26L24 9.27L17.36 15.14L19.38 24L12 19.34L4.62 24L6.64 15.14L0 9.27L8.91 8.26L12 0Z"/></svg>
+            <svg class="absolute top-[52%] left-4 w-4 h-4 fill-gold-400 twinkle-star" style="animation-delay: 0.4s;" viewBox="0 0 24 24"><path d="M12 0L15.09 8.26L24 9.27L17.36 15.14L19.38 24L12 19.34L4.62 24L6.64 15.14L0 9.27L8.91 8.26L12 0Z"/></svg>
+            <svg class="absolute top-[75%] right-6 w-4 h-4 fill-gold-400 twinkle-star" style="animation-delay: 1.8s;" viewBox="0 0 24 24"><path d="M12 0L15.09 8.26L24 9.27L17.36 15.14L19.38 24L12 19.34L4.62 24L6.64 15.14L0 9.27L8.91 8.26L12 0Z"/></svg>
+        </div>
+
+        <!-- OSITOS EN LOS COSTADOS / LATERALES DE LA INVITACIÓN -->
+        
+        <!-- Osito Lateral 1: Izquierda (Sección Galería/Mensaje) -->
+        <div class="absolute top-[28%] -left-3 w-16 h-20 z-20 pointer-events-none float-gentle">
+            <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-md">
+                <!-- Globito dorado -->
+                <path d="M 60,65 Q 40,25 35,10" stroke="#C8B79B" stroke-width="1.2" fill="none"/>
+                <ellipse cx="35" cy="10" rx="10" ry="13" fill="#D4AF37" />
+                <!-- Osito sentado asomándose -->
+                <circle cx="55" cy="75" r="18" fill="#C59B6C"/> <!-- Cuerpo -->
+                <circle cx="55" cy="75" r="11" fill="#F3EBE1"/>
+                <circle cx="55" cy="52" r="15" fill="#C59B6C"/> <!-- Cabeza -->
+                <circle cx="43" cy="42" r="5" fill="#C59B6C"/>
+                <circle cx="43" cy="42" r="3" fill="#F3EBE1"/>
+                <circle cx="67" cy="42" r="5" fill="#C59B6C"/>
+                <circle cx="67" cy="42" r="3" fill="#F3EBE1"/>
+                <circle cx="55" cy="55" r="6" fill="#F3EBE1"/>
+                <circle cx="55" cy="53" r="2" fill="#3E4937"/>
+                <circle cx="49" cy="49" r="1.8" fill="#3E4937"/>
+                <circle cx="61" cy="49" r="1.8" fill="#3E4937"/>
+            </svg>
+        </div>
+
+        <!-- Osito Lateral 2: Derecha (Sección Fecha) -->
+        <div class="absolute top-[50%] -right-3 w-16 h-20 z-20 pointer-events-none float-delay-1">
+            <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-md">
+                <!-- Globito verde sabio -->
+                <path d="M 40,65 Q 60,25 65,10" stroke="#C8B79B" stroke-width="1.2" fill="none"/>
+                <ellipse cx="65" cy="10" rx="10" ry="13" fill="#6B7A63" />
+                <!-- Osito sentado -->
+                <circle cx="45" cy="75" r="18" fill="#B88A58"/>
+                <circle cx="45" cy="75" r="11" fill="#F3EBE1"/>
+                <circle cx="45" cy="52" r="15" fill="#B88A58"/>
+                <circle cx="33" cy="42" r="5" fill="#B88A58"/>
+                <circle cx="33" cy="42" r="3" fill="#F3EBE1"/>
+                <circle cx="57" cy="42" r="5" fill="#B88A58"/>
+                <circle cx="57" cy="42" r="3" fill="#F3EBE1"/>
+                <circle cx="45" cy="55" r="6" fill="#F3EBE1"/>
+                <circle cx="45" cy="53" r="2" fill="#3E4937"/>
+                <circle cx="39" cy="49" r="1.8" fill="#3E4937"/>
+                <circle cx="51" cy="49" r="1.8" fill="#3E4937"/>
+            </svg>
+        </div>
+
+        <!-- Osito Lateral 3: Izquierda (Sección Regalos) -->
+        <div class="absolute top-[72%] -left-3 w-16 h-20 z-20 pointer-events-none float-delay-2">
+            <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-md">
+                <!-- Globito beige -->
+                <path d="M 60,65 Q 40,25 35,10" stroke="#C8B79B" stroke-width="1.2" fill="none"/>
+                <ellipse cx="35" cy="10" rx="10" ry="13" fill="#E8DFD3" stroke="#C5A059" stroke-width="1"/>
+                <!-- Osito -->
+                <circle cx="55" cy="75" r="18" fill="#C59B6C"/>
+                <circle cx="55" cy="75" r="11" fill="#F3EBE1"/>
+                <circle cx="55" cy="52" r="15" fill="#C59B6C"/>
+                <circle cx="43" cy="42" r="5" fill="#C59B6C"/>
+                <circle cx="67" cy="42" r="5" fill="#C59B6C"/>
+                <circle cx="55" cy="55" r="6" fill="#F3EBE1"/>
+                <circle cx="55" cy="53" r="2" fill="#3E4937"/>
+                <circle cx="49" cy="49" r="1.8" fill="#3E4937"/>
+                <circle cx="61" cy="49" r="1.8" fill="#3E4937"/>
+            </svg>
+        </div>
+
+
+        <!-- REPRODUCTOR DE MÚSICA DE FONDO -->
+        <div class="fixed top-4 right-4 md:absolute md:top-4 md:right-4 z-50">
+            <button id="musicToggle" aria-label="Reproducir música" class="w-10 h-10 rounded-full bg-white/80 backdrop-blur-md shadow-md flex items-center justify-center text-sage-600 hover:bg-sage-500 hover:text-white transition-all">
+                <i id="musicIcon" class="fas fa-music text-sm"></i>
+            </button>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL DE LA INVITACIÓN -->
+        <div class="relative z-10 px-5 pt-4 pb-10 space-y-7 text-center">
+
+            <!-- 1. ENCABEZADO PRINCIPAL DESTACADO: OSITO EN CANASTILLA DE GLOBO AEROSTÁTICO -->
+            <section class="space-y-2 pt-2">
+
+            <!-- 1. ENCABEZADO CON GRAN CÚMULO DE GLOBOS Y OSITO EN CESTA SALUDANDO -->
+            <section class="space-y-1 pt-1">
+                <div class="w-full max-w-[320px] h-64 mx-auto relative float-gentle">
+                    <svg viewBox="0 0 280 260" class="w-full h-full drop-shadow-soft">
+                        <defs>
+                            <radialGradient id="balloonSage" cx="35%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#8EA586" />
+                                <stop offset="60%" stop-color="#6B7F62" />
+                                <stop offset="100%" stop-color="#4B5A44" />
+                            </radialGradient>
+                            <radialGradient id="balloonBeige" cx="35%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#FFFFFF" />
+                                <stop offset="50%" stop-color="#F5EBE1" />
+                                <stop offset="100%" stop-color="#E1CFBF" />
+                            </radialGradient>
+                            <radialGradient id="balloonGold" cx="35%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#FFF2C6" />
+                                <stop offset="50%" stop-color="#E8D28B" />
+                                <stop offset="100%" stop-color="#C5A059" />
+                            </radialGradient>
+                        </defs>
+
+                        <!-- GRAN RACIMO / CÚMULO DE GLOBOS (ESTILO REFERENCIA EN CAJA) -->
+                        <g>
+                            <!-- Capa Trasera de Globos -->
+                            <ellipse cx="80" cy="50" rx="20" ry="24" fill="url(#balloonBeige)"/>
+                            <ellipse cx="200" cy="50" rx="22" ry="26" fill="url(#balloonSage)"/>
+                            <ellipse cx="100" cy="30" rx="24" ry="28" fill="url(#balloonGold)"/>
+                            <ellipse cx="180" cy="30" rx="22" ry="26" fill="url(#balloonBeige)"/>
+                            <ellipse cx="140" cy="20" rx="26" ry="30" fill="url(#balloonSage)"/>
+
+                            <!-- Capa Intermedia de Globos -->
+                            <ellipse cx="60" cy="75" rx="22" ry="26" fill="url(#balloonSage)"/>
+                            <ellipse cx="220" cy="75" rx="22" ry="26" fill="url(#balloonGold)"/>
+                            <ellipse cx="90" cy="70" rx="25" ry="30" fill="url(#balloonBeige)"/>
+                            <ellipse cx="190" cy="70" rx="25" ry="30" fill="url(#balloonBeige)"/>
+                            <ellipse cx="130" cy="55" rx="28" ry="32" fill="url(#balloonGold)"/>
+                            <ellipse cx="165" cy="55" rx="26" ry="30" fill="url(#balloonSage)"/>
+
+                            <!-- Capa Frontal de Globos Inflados -->
+                            <ellipse cx="75" cy="100" rx="24" ry="28" fill="url(#balloonGold)"/>
+                            <ellipse cx="205" cy="100" rx="24" ry="28" fill="url(#balloonSage)"/>
+                            <ellipse cx="115" cy="95" rx="28" ry="32" fill="url(#balloonSage)"/>
+                            <ellipse cx="165" cy="95" rx="28" ry="32" fill="url(#balloonBeige)"/>
+                            <ellipse cx="140" cy="80" rx="30" ry="35" fill="url(#balloonBeige)"/>
+                        </g>
+
+                        <!-- Nubes suaves entrelazadas con los globos -->
+                        <path d="M 40,120 Q 70,105 100,120 Q 130,100 160,120 Q 200,105 240,120 Z" fill="#FFFFFF" opacity="0.85"/>
+
+                        <!-- Cuerdas suspendidas hacia la cesta -->
+                        <line x1="110" y1="125" x2="122" y2="175" stroke="#C8A892" stroke-width="1.8"/>
+                        <line x1="170" y1="125" x2="158" y2="175" stroke="#C8A892" stroke-width="1.8"/>
+                        <line x1="130" y1="128" x2="128" y2="175" stroke="#C8A892" stroke-width="1.2"/>
+                        <line x1="150" y1="128" x2="152" y2="175" stroke="#C8A892" stroke-width="1.2"/>
+
+                        <!-- CESTA DE MIMBRE CON DETALLES DE ENCAJE / MACRAMÉ -->
+                        <rect x="118" y="175" width="44" height="34" rx="7" fill="#C59B6C" stroke="#A37E39" stroke-width="2"/>
+                        <!-- Tejido de Mimbre -->
+                        <path d="M 118,185 L 162,185 M 118,195 L 162,195 M 118,200 L 162,200" stroke="#8C663C" stroke-width="1.2"/>
+                        <!-- Encaje de Macramé Colgante estilo referencia -->
+                        <path d="M 118,177 Q 123,186 129,177 Q 134,186 140,177 Q 145,186 151,177 Q 156,186 162,177" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+                        <circle cx="123.5" cy="188" r="1.5" fill="#FFF"/>
+                        <circle cx="134.5" cy="188" r="1.5" fill="#FFF"/>
+                        <circle cx="145.5" cy="188" r="1.5" fill="#FFF"/>
+                        <circle cx="156.5" cy="188" r="1.5" fill="#FFF"/>
+
+                        <!-- OSITO DENTRO DE LA CESTA SALUDANDO -->
+                        <g>
+                            <!-- Cabeza del Osito -->
+                            <circle cx="140" cy="162" r="16" fill="#C89D6C"/>
+                            <!-- Orejitas -->
+                            <circle cx="127" cy="151" r="5.5" fill="#C89D6C"/>
+                            <circle cx="127" cy="151" r="3.5" fill="#F5EBE1"/>
+                            <circle cx="153" cy="151" r="5.5" fill="#C89D6C"/>
+                            <circle cx="153" cy="151" r="3.5" fill="#F5EBE1"/>
+                            <!-- Hocico -->
+                            <circle cx="140" cy="165" r="6.5" fill="#F5EBE1"/>
+                            <ellipse cx="140" cy="163" rx="2.5" ry="1.8" fill="#3A4735"/>
+                            <!-- Ojos -->
+                            <circle cx="134" cy="160" r="1.8" fill="#3A4735"/>
+                            <circle cx="146" cy="160" r="1.8" fill="#3A4735"/>
+                            <!-- Moño Blanco al Cuello -->
+                            <path d="M 134,173 Q 140,169 146,173 Q 140,177 134,173 Z" fill="#FFFFFF"/>
+                            <!-- Mano Apoyada en Cesta (Izquierda) -->
+                            <circle cx="125" cy="177" r="4.5" fill="#C89D6C"/>
+                            <!-- Mano Levantada Saludando (Derecha) -->
+                            <circle cx="158" cy="156" r="4.5" fill="#C89D6C"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Guirnalda de Ropita de Bebé -->
+                <div class="w-full max-w-[290px] mx-auto py-0">
+                    <svg viewBox="0 0 320 60" class="w-full h-auto drop-shadow-sm">
+                        <!-- Cuerda -->
+                        <path d="M 10,15 Q 160,35 310,15" fill="none" stroke="#C8B79B" stroke-width="1.8" stroke-dasharray="3,2"/>
+                        <!-- Pinzas -->
+                        <rect x="68" y="17" width="3" height="7" fill="#55624C" />
+                        <rect x="138" y="22" width="3" height="7" fill="#55624C" />
+                        <rect x="218" y="20" width="3" height="7" fill="#55624C" />
+
+                        <!-- Body de Bebé -->
+                        <g transform="translate(52,20) scale(0.55)">
+                            <path d="M10 10 L25 5 L40 10 L46 25 L36 25 L36 46 Q25 52 14 46 L14 25 L4 25 Z" fill="#6B7A63"/>
+                            <circle cx="25" cy="28" r="4" fill="#F3EBE1"/>
+                        </g>
+
+                        <!-- Jardinera / Overol Beige -->
+                        <g transform="translate(122,25) scale(0.55)">
+                            <path d="M8 5 L32 5 L36 18 L36 42 L4 42 L4 18 Z" fill="#E8DFD3" stroke="#55624C" stroke-width="1.5"/>
+                            <rect x="10" y="5" width="4" height="15" fill="#6B7A63"/>
+                            <rect x="26" y="5" width="4" height="15" fill="#6B7A63"/>
+                        </g>
+
+                        <!-- Gorrito Verde -->
+                        <g transform="translate(202,22) scale(0.55)">
+                            <path d="M5 25 Q25 4 45 25 Z" fill="#6B7A63"/>
+                            <rect x="2" y="23" width="46" height="5" rx="2" fill="#F3EBE1"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Título e Información de la Invitación -->
+                <div class="space-y-1">
+                    <h2 class="font-cinzel text-[14px] tracking-[0.35em] uppercase text-sage-600 font-bold">
+                        Acompáñanos al
+                    </h2>
+                    <h1 id="invitation-title" class="font-cinzel text-6xl sm:text-4xl font-bold text-sage-600 tracking-wider">
+                        Baby Shower
+                    </h1>
+
+                    <!-- Divisor Dorado -->
+                    <div class="flex items-center justify-center space-x-2 my-2">
+                        <span class="h-[1px] w-12 bg-gold-400"></span>
+                        <span class="text-gold-400 text-xs">★</span>
+                        <span class="h-[1px] w-12 bg-gold-400"></span>
+                    </div>
+
+                    <p class="font-serif text-2xl sm:text-lg font-bold text-sage-600 italic px-2">
+                        de:
+                    </p>
+
+                    <h3 class="font-script text-5xl sm:text-3xl font-normal text-sage-600 italic px-2">
+                        Norma Lilia
+                    </h3>
+
+                    <h3 class="font-script text-4xl sm:text-3xl font-normal text-sage-600 italic px-2">
+                        Damián Salas
+                    </h3>
+
+                    <p class="font-script text-4xl text-gold-600 pt-5">
+                        La dulce espera de mi bebé
+                    </p>
+
+                </div>
+            </section>
+
+            <!-- 2. GALERÍA DE ULTRASONIDO / MARCO DORADO -->
+            <section class="py-1 relative px-2">
+                <div class="photo-frame mx-auto max-w-[270px] rounded-md transform -rotate-1 relative z-10">
+                    <div class="relative overflow-hidden rounded bg-beige-100 aspect-[4/3] flex items-center justify-center border border-beige-300">
+                        <img src="resources/ultrasonido.jpeg" 
+                             alt="Ultrasonido Bebé" 
+                             class="w-full h-full object-cover brightness-95 contrast-110">
+                        <div class="absolute inset-0 bg-sage-500/10 mix-blend-multiply"></div>
+                        <div class="absolute bottom-2 right-2 bg-sage-600/80 text-white text-[9px] px-2 py-0.5 rounded font-mono">
+                            1 de 1
+                        </div>
+                    </div>
+                    <p class="font-script text-3xl text-sage-600 mt-2 mb-0">
+                        Con amor y emoción
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. MENSAJE EMOTIVO DE BIENVENIDA -->
+            <section class="bg-white/80 backdrop-blur-sm p-5 rounded-2xl border border-beige-300 shadow-sm space-y-2 relative">
+                <i class="fas fa-quote-left text-gold-400 text-lg block"></i>
+                <p class="font-script text-[28px] text-sage-600 leading-tight">
+                    "Por eso quiero que nos acompañen en este hermoso momento..."
+                </p>
+                <p class="text-sm text-sage-600 font-medium leading-relaxed">
+                    Sé que me esperan con tanto amor y alegría, por eso deseo de corazón que compartas con nosotros esta inolvidable celebración. ¡Muy pronto estaremos juntos!
+                </p>
+            </section>
+
+            <!-- 4. FECHA, HORA Y LUGAR DEL EVENTO -->
+            <section class="bg-beige-100/90 border border-beige-300 rounded-2xl p-5 space-y-4 shadow-sm relative">
+                
+                <h4 class="font-cinzel text-base tracking-widest text-sage-600 font-bold uppercase">
+                    ¿Cuándo y Dónde?
+                </h4>
+
+                <!-- Tarjeta de Fecha: 7 de noviembre de 2026 -->
+                <div class="flex items-center justify-center space-x-3 py-3 border-y border-beige-300">
+                    <div class="text-right">
+                        <span class="block font-serif text-base uppercase text-sage-600 font-bold">SÁBADO</span>
+                        <span class="block font-script text-3xl text-gold-500">Noviembre</span>
+                    </div>
+                    <div class="px-4 py-1.5 bg-sage-500 text-white rounded-xl font-serif text-3xl font-bold shadow-md">
+                        07
+                    </div>
+                    <div class="text-left">
+                        <span class="block font-serif text-base uppercase text-sage-600 font-bold">2026</span>
+                        <span class="block font-sans text-lg text-sage-600 font-semibold">3:30 PM</span>
+                    </div>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="space-y-1 text-xs text-sage-600">
+                    <p class="font-bold text-base uppercase tracking-wider text-sage-600 flex items-center justify-center gap-1.5">
+                        <i class="fas fa-map-marker-alt text-gold-400"></i> LUGAR DEL EVENTO
+                    </p>
+                    <p class="font-semibold text-sm"></p>
+                    <p class="text-sage-600/80 text-base">Calle Adolfo López Mateos s/n Barrio San Juan. Coyotepec, México</p>
+                </div>
+
+                <!-- Botón Ver Mapa Modal Inline -->
+                <button onclick="openMapModal()" class="w-full py-2.5 px-4 bg-white border border-sage-300 text-sage-600 rounded-xl text-xs font-bold shadow-sm hover:bg-sage-500 hover:text-white transition-all flex items-center justify-center gap-2 group">
+                    <i class="fas fa-map-marked-alt text-gold-400 group-hover:text-white transition-colors"></i>
+                    VER MAPA DE UBICACIÓN
+                </button>
+            </section>
+
+
+            <!-- 5. MESA DE REGALOS / LLUVIA DE SOBRES
+            <section class="bg-white/80 backdrop-blur-sm p-5 rounded-2xl border border-beige-300 space-y-2 relative">
+                <div class="w-9 h-9 mx-auto rounded-full bg-beige-200 flex items-center justify-center text-gold-500 shadow-inner">
+                    <i class="fas fa-gift text-base"></i>
+                </div>
+                <h4 class="font-cinzel text-xs tracking-widest text-sage-600 font-bold uppercase">
+                    Mesa de Regalos
+                </h4>
+                <p class="text-xs text-sage-600 leading-relaxed">
+                    Tu presencia es nuestro mejor regalo. Si deseas hacernos un detalle adicional, contaremos con mesa de sobres o sugerencia de pañales (Talla Etapa 1 o 2).
+                </p>
+            </section> -->
+
+
+            <!-- 6. BOTÓN INTERACTIVO CONFIRMAR ASISTENCIA (WHATSAPP) -->
+            <section class="bg-sage-600 text-white p-6 rounded-2xl space-y-3 shadow-lg relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-sage-500/40 rounded-full pointer-events-none"></div>
+
+                <h4 class="font-script text-5xl text-beige-100">
+                    ¡Te esperamos!
+                </h4>
+                <p class="text-base text-beige-100/90 font-light">
+                    ¡Eres nuestro invitado especial, no faltes! Confirma tu asistencia dando clic en el botón de abajo.
+                </p>
+
+                <!-- Botón de WhatsApp con mensaje personalizado -->
+                <a href="https://wa.me/52?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20para%20celebrar%20la%20pronta%20llegada%20de%20tu%20beb%C3%A9.%20Nos%20vemos%20el%207%20de%20noviembre" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="w-full py-3 bg-gold-400 hover:bg-gold-500 text-sage-700 font-bold text-sm uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-center decoration-none block">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    CONFIRMAR ASISTENCIA
+                </a>
+            </section>
+
+            <!-- FOOTER CON FIRMA Y AÑO -->
+            <footer class="pt-2 pb-2 text-center space-y-1">
+                <p class="font-script text-2xl text-sage-600">Norma Lilia Damián Salas</p>
+                <p class="text-[10px] text-sage-600/70 uppercase tracking-widest">Baby Shower • 07 de Noviembre 2026</p>
+            </footer>
+
+        </div>
+    </div>
+
+<!-- MODAL DE UBICACIÓN / MAPA INLINE -->
+<div id="mapModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-beige-100 w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-beige-300">
+        <div class="p-4 bg-sage-600 text-white flex justify-between items-center">
+            <h3 class="font-cinzel text-base font-semibold flex items-center gap-2 tracking-wider uppercase">
+                <i class="fas fa-map-pin text-gold-400"></i> Ubicación del Evento
+            </h3>
+            <button onclick="closeMapModal()" aria-label="Cerrar mapa" class="text-white/80 hover:text-white text-lg">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="p-4 space-y-3">
+            <!-- Contenedor del mapa que también es clickeable -->
+            <a href="https://www.google.com/maps/@19.7793361,-99.2080445,2303a,48.9y,65.9h,87.57t/data=!3m7!1e1!3m5!1sVNZ-uyIOgx5WznUgUEU9tQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.429555961561988%26panoid%3DVNZ-uyIOgx5WznUgUEU9tQ%26yaw%3D65.9025929267475!7i16384!8i8192?authuser=0&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="block w-full h-44 bg-stone-200 rounded-xl overflow-hidden relative border border-stone-300 group">
+                <!--<img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80" 
+                     alt="Mapa de ubicación" 
+                     class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"> -->
+                <div class="absolute inset-0 bg-sage-500/10"></div>
+                <div class="absolute flex flex-col items-center inset-0 justify-center">
+                    <span class="bg-sage-600 text-white text-[10px] px-2 py-0.5 rounded shadow-lg font-semibold mb-1 animate-bounce">
+                        Toca para abrir en Google Maps
+                    </span>
+                    <i class="fas fa-map-marker-alt text-red-500 text-3xl drop-shadow-md"></i>
+                </div>
+            </a>
+
+            <div class="text-sm text-sage-600 space-y-1">
+                <p class="font-semibold">Dirección:</p>
+                <p class="text-sage-600/90">Calle Adolfo López Mateos s/n Barrio San Juan. Coyotepec, México</p>
+            </div>
+
+            <!-- Botón principal para abrir Google Maps con el estilo de la invitación -->
+            <a href="https://www.google.com/maps/@19.7793361,-99.2080445,2303a,48.9y,65.9h,87.57t/data=!3m7!1e1!3m5!1sVNZ-uyIOgx5WznUgUEU9tQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.429555961561988%26panoid%3DVNZ-uyIOgx5WznUgUEU9tQ%26yaw%3D65.9025929267475!7i16384!8i8192?authuser=0&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="w-full py-2.5 bg-sage-600 text-white rounded-xl text-sm font-semibold hover:bg-sage-700 transition-colors flex items-center justify-center gap-2 shadow-md">
+                <i class="fas fa-map-marked-alt text-base"></i> Abrir en Google Maps
+            </a>
+
+            <button onclick="closeMapModal()" class="w-full py-2 bg-stone-200 text-sage-700 rounded-xl text-sm font-semibold hover:bg-stone-300 transition-colors">
+                Cerrar
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script src="./js/script.js"></script>]
+    
+</body>
+
+</html>

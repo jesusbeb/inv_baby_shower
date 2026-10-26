@@ -1,0 +1,61 @@
+body {
+        background-color: #2B332A;
+        font-family: 'Montserrat', sans-serif;
+        color: #55624C;
+        overflow-x: hidden;
+}
+
+/* Lienzo estilo papel acuarela suave */
+.invitation-card {
+    background-color: #F3EBE1;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(232, 223, 211, 0.95) 0%, transparent 50%),
+        radial-gradient(circle at 10% 40%, rgba(107, 122, 99, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 90% 70%, rgba(212, 175, 55, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(243, 235, 225, 0.95) 0%, rgba(232, 223, 211, 0.7) 100%);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Animaciones para movimiento flotante natural */
+.float-gentle {
+    animation: floatSlow 5s ease-in-out infinite alternate;
+}
+.float-delay-1 {
+    animation: floatSlow 7s ease-in-out infinite 1.5s alternate;
+}
+.float-delay-2 {
+    animation: floatSlow 6s ease-in-out infinite 2.5s alternate;
+}
+
+.twinkle-star {
+    animation: twinkle 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlow {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(1.2deg); }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.25; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Marco estilo foto polaroid acuarela */
+.photo-frame {
+    background: #FFFFFF;
+    padding: 10px 10px 24px 10px;
+    box-shadow: 0 10px 25px rgba(85, 98, 76, 0.15), 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+/* Estilo de línea de borde dorado brillante */
+.gold-border {
+    border: 1px solid #D4AF37;
+    background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(255,255,255,0) 100%);
+}
+
+
+#invitation-title {
+    font-family: "Dancing Script", cursive;
+}
