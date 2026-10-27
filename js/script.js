@@ -99,8 +99,8 @@ musicBtn.addEventListener('click', () => {
 
 
 // --- LÓGICA DE DISPONIBILIDAD PARA SUBIR FOTOS ---
-// Enero es 0, Octubre es 9, Noviembre es 10, Diciembre es 11.
-const fechaInicioFotos = new Date(2026, 9, 7, 15, 30);  // 7 de Noviembre de 2026 a las 3:30 PM
+// Enero es 0, Noviembre es 10, Diciembre es 11.
+const fechaInicioFotos = new Date(2026, 10, 7, 15, 30);  // 7 de Noviembre de 2026 a las 3:30 PM
 const fechaFinFotos    = new Date(2026, 11, 14, 23, 59); // 14 de Noviembre de 2026 a las 11:59 PM
 const ahora = new Date();
 const btnFotos = document.getElementById('btnSubirFotos');
