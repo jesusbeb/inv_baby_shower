@@ -426,6 +426,41 @@
                 </a>
             </section>
 
+<!-- SECCIÓN: COMPARTIR FOTOS EN GOOGLE DRIVE -->
+<section class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-beige-300 shadow-sm space-y-4 text-center relative overflow-hidden">
+    <div class="w-10 h-10 mx-auto rounded-full bg-sage-100 flex items-center justify-center text-sage-600 shadow-inner">
+        <i class="fas fa-camera-retro text-lg"></i>
+    </div>
+    
+    <div class="space-y-1">
+        <h4 class="font-cinzel text-lg tracking-widest text-sage-600 font-bold uppercase">
+            Comparte tus Fotografías
+        </h4>
+        <p class="text-lg text-sage-600 leading-relaxed">
+            ¡Queremos ver el Baby Shower a través de tus ojos! Sube las fotos y videos que tomes durante el evento a nuestra carpeta compartida.
+        </p>
+    </div>
+
+    <!-- Botón de Google Drive (Controlado por la lógica de fechas) -->
+    <div class="space-y-2">
+        <a id="btnSubirFotos" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="w-full py-3 bg-stone-300 text-stone-500 font-bold text-sm uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 text-center pointer-events-none cursor-not-allowed">
+            <i class="fab fa-google-drive text-lg"></i>
+            SUBIR FOTOS (DISPONIBLE EL 7 DE NOV)
+        </a>
+        <p id="driveStatusMsg" class="text-[14px] text-amber-600 font-medium">
+            ⏳ El botón se habilitará automáticamente el día del evento.
+        </p>
+    </div>
+</section>
+
+
+
+
+
+
             <!-- FOOTER CON FIRMA Y AÑO -->
             <footer class="pt-2 pb-2 text-center space-y-1">
                 <p class="font-script text-2xl text-sage-600">Norma Lilia Damián Salas</p>
