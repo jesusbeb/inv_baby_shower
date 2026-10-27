@@ -10,12 +10,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?
-                                                family=Dancing+Script:wght@400..700&display=swap&
-                                                family=Cinzel:wght@500;600;700&
-                                                family=Great+Vibes&
-                                                family=Montserrat:wght@300;400;500;600;700&
-                                                family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -28,6 +23,42 @@
     <audio id="bgAudio" loop preload="none">
         <source src="resources/te-esperaba.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- PANTALLA DE BIENVENIDA CON SOBRE INTERACTIVO -->
+    <div id="envelopeOverlay" class="fixed inset-0 bg-[#2B332A] z-50 flex flex-col items-center justify-center p-4 transition-opacity duration-1000">
+        <div class="text-center mb-6 animate-pulse space-y-1">
+            <p class="font-cinzel text-[#F3EBE1] text-lg font-semibold tracking-wide">Tienes una invitación especial</p>
+            <p class="font-sans text-xs text-[#E8DFD3]/80 uppercase tracking-widest">Toca el sobre para abrir</p>
+        </div>
+
+        <!-- ESTRUCTURA DEL SOBRE -->
+        <div id="envelope" onclick="openEnvelope()" class="relative w-72 h-48 bg-[#E2D4C3] rounded-b-2xl shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300">
+            <!-- Solapa trasera -->
+            <div class="absolute inset-0 bg-[#D4C3B0] rounded-b-2xl"></div>
+            
+            <!-- Tarjeta interna -->
+            <div id="envelopeCard" class="absolute left-4 right-4 bottom-2 top-4 bg-white rounded-t-xl shadow-inner flex flex-col items-center justify-center p-3 text-center border border-[#DBCFB8] transition-transform duration-700">
+                <i class="fas fa-baby text-[#6B7A63] text-2xl mb-1"></i>
+                <p class="font-cinzel text-[#55624C] text-sm font-bold uppercase tracking-wider">Baby Shower</p>
+                <p class="font-serif text-base text-[#6B7A63] italic">Norma Lilia Damián Salas</p>
+            </div>
+
+            <!-- Solapas laterales -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute inset-0" style="clip-path: polygon(0 0, 50% 50%, 0 100%); background-color: #DECFC0;"></div>
+                <div class="absolute inset-0" style="clip-path: polygon(100% 0, 50% 50%, 100% 100%); background-color: #D6C5B3;"></div>
+                <div class="absolute inset-0" style="clip-path: polygon(0 100%, 50% 45%, 100% 100%); background-color: #CFC0AE;"></div>
+            </div>
+
+            <!-- Solapa superior -->
+            <div id="envelopeFlap" class="absolute top-0 left-0 right-0 h-28 bg-[#E8DACB] origin-top transition-transform duration-700 z-10" style="clip-path: polygon(0 0, 100% 0, 50% 100%);"></div>
+
+            <!-- Sello -->
+            <div id="envelopeSeal" class="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-[#6B7A63] rounded-full shadow-md z-20 flex items-center justify-center text-white text-xs transition-opacity duration-300">
+                <i class="fas fa-heart text-[#D4AF37]"></i>
+            </div>
+        </div>
+    </div>
 
     <!-- CONTENEDOR PRINCIPAL TIPO CANVAS FLUIDO -->
     <div class="invitation-card w-full max-w-md min-h-screen md:min-h-0 md:rounded-3xl overflow-hidden relative border-0 md:border-4 border-sage-300/40">
@@ -316,7 +347,7 @@
                 <p class="font-script text-[28px] text-sage-600 leading-tight">
                     "Por eso quiero que nos acompañen en este hermoso momento..."
                 </p>
-                <p class="text-sm text-sage-600 font-medium leading-relaxed">
+                <p class="text-base text-sage-600 font-medium leading-relaxed">
                     Sé que me esperan con tanto amor y alegría, por eso deseo de corazón que compartas con nosotros esta inolvidable celebración. ¡Muy pronto estaremos juntos!
                 </p>
             </section>
@@ -324,36 +355,36 @@
             <!-- 4. FECHA, HORA Y LUGAR DEL EVENTO -->
             <section class="bg-beige-100/90 border border-beige-300 rounded-2xl p-5 space-y-4 shadow-sm relative">
                 
-                <h4 class="font-cinzel text-base tracking-widest text-sage-600 font-bold uppercase">
+                <h4 class="font-cinzel text-lg tracking-widest text-sage-600 font-bold uppercase">
                     ¿Cuándo y Dónde?
                 </h4>
 
                 <!-- Tarjeta de Fecha: 7 de noviembre de 2026 -->
                 <div class="flex items-center justify-center space-x-3 py-3 border-y border-beige-300">
                     <div class="text-right">
-                        <span class="block font-serif text-base uppercase text-sage-600 font-bold">SÁBADO</span>
-                        <span class="block font-script text-3xl text-gold-500">Noviembre</span>
+                        <span class="block font-serif text-lg uppercase text-sage-600 font-bold">SÁBADO</span>
+                        <span class="block font-script text-4xl text-gold-500">Noviembre</span>
                     </div>
                     <div class="px-4 py-1.5 bg-sage-500 text-white rounded-xl font-serif text-3xl font-bold shadow-md">
                         07
                     </div>
                     <div class="text-left">
-                        <span class="block font-serif text-base uppercase text-sage-600 font-bold">2026</span>
-                        <span class="block font-sans text-lg text-sage-600 font-semibold">3:30 PM</span>
+                        <span class="block font-serif text-lg uppercase text-sage-600 font-bold">2026</span>
+                        <span class="block font-sans text-xl text-sage-600 font-semibold">3:30 PM</span>
                     </div>
                 </div>
 
                 <!-- Ubicación -->
                 <div class="space-y-1 text-xs text-sage-600">
-                    <p class="font-bold text-base uppercase tracking-wider text-sage-600 flex items-center justify-center gap-1.5">
+                    <p class="font-bold text-lg uppercase tracking-wider text-sage-600 flex items-center justify-center gap-1.5">
                         <i class="fas fa-map-marker-alt text-gold-400"></i> LUGAR DEL EVENTO
                     </p>
                     <p class="font-semibold text-sm"></p>
-                    <p class="text-sage-600/80 text-base">Calle Adolfo López Mateos s/n Barrio San Juan. Coyotepec, México</p>
+                    <p class="text-sage-600/80 text-lg">Calle Adolfo López Mateos s/n Barrio San Juan. Coyotepec, México</p>
                 </div>
 
                 <!-- Botón Ver Mapa Modal Inline -->
-                <button onclick="openMapModal()" class="w-full py-2.5 px-4 bg-white border border-sage-300 text-sage-600 rounded-xl text-xs font-bold shadow-sm hover:bg-sage-500 hover:text-white transition-all flex items-center justify-center gap-2 group">
+                <button onclick="openMapModal()" class="w-full py-2.5 px-4 bg-white border border-sage-300 text-sage-600 rounded-xl text-base font-bold shadow-sm hover:bg-sage-500 hover:text-white transition-all flex items-center justify-center gap-2 group">
                     <i class="fas fa-map-marked-alt text-gold-400 group-hover:text-white transition-colors"></i>
                     VER MAPA DE UBICACIÓN
                 </button>
@@ -381,7 +412,7 @@
                 <h4 class="font-script text-5xl text-beige-100">
                     ¡Te esperamos!
                 </h4>
-                <p class="text-base text-beige-100/90 font-light">
+                <p class="text-lg text-beige-100/90 font-light">
                     ¡Eres nuestro invitado especial, no faltes! Confirma tu asistencia dando clic en el botón de abajo.
                 </p>
 
